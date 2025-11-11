@@ -1,46 +1,47 @@
 export const colors = {
-    neutral900: '#030303',
-    neutral400: '#6A6662',
-    neutral200: '#FFF7F0',
-    neutral0: '#FFFFFF',
-    lightRed500: '#E16B5B',
-    galacticBlue500: '#755CDE',
-    summerYellow500: '#F6A560',
-    orange500: '#EC9B56',
-    pink500: '#F39E9E',
-    cyan500: '#61C4B7',
-    darkPurple500: '#552049'
+    white: '#FFFFFF',
+    dark: '#070724',
+    darkGray: '#38384F',
+    lightGray: '#838391',
+    lightBlue: '#419EBB',
+    yellow: '#EDA249',
+    purple: '#6F2ED6',
+    brickRed: '#D14C32',
+    red: '#D83A34',
+    orange: '#CD5120',
+    mintGreen: '#1EC2A4',
+    blue: '#2D68F0',
 };
 
 export const textStyle = {
-    1: {
-        fontFamily: 'plusJakartaSans-Bold',
-        fontSize: 56,
-        lineHeight: 56 * 1.3,
+    H1: {
+        fontFamily: 'Antonio-Medium',
+        fontSize: 80,
+        lineHeight: 103,
+        textTransform: 'uppercase',
     },
-    1.5: {
-        fontFamily: 'plusJakartaSans-Bold',
+    H2: {
+        fontFamily: 'Antonio-Medium',
         fontSize: 40,
-        lineHeight: 40 * 1.2,
+        lineHeight: 52,
+        letterSpacing: -1.5,
+        textTransform: 'uppercase',
     },
-    2: {
-        fontFamily: 'plusJakartaSans-Bold',
-        fontSize: 40,
-        lineHeight: 40 * 1.3,
+    H3: {
+        fontFamily: 'Spartan-Bold',
+        fontSize: 12,
+        lineHeight: 25,
+        letterSpacing: 2.6,
     },
-    3: {
-        fontFamily: 'plusJakartaSans-Bold',
-        fontSize: 24,
-        lineHeight: 24 * 1.3,
+    H4: {
+        fontFamily: 'Spartan-Bold',
+        fontSize: 11,
+        lineHeight: 25,
+        letterSpacing: 1
     },
-    4: {
-        fontFamily: 'plusJakartaSans-Medium',
-        fontSize: 18,
-        lineHeight: 18 * 1.5,
-    },
-    5: {
-        fontFamily: 'plusJakartaSans-Bold',
-        fontSize: 16,
-        lineHeight: 16 * 1.5,
+    body: {
+        fontFamily: 'Spartan-Regular',
+        fontSize: 14,
+        lineHeight: 25,
     },
 };
