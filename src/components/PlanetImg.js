@@ -4,7 +4,7 @@ import React from 'react'
 const PlanetImg = () => {
   return (
     <View>
-      <Text>PlanetImg</Text>
+      <Text style={{ color: 'white' }}>PlanetImg</Text>
     </View>
   )
 }

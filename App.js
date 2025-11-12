@@ -1,12 +1,15 @@
-import { StatusBar } from 'expo-status-bar';
-import { Image, ImageBackground, StyleSheet, View, useWindowDimensions } from 'react-native';
+import { useState } from 'react';
+import { Image, ImageBackground, StyleSheet, View, useWindowDimensions, Text } from 'react-native';
 import { useFonts } from 'expo-font';
+import { StatusBar } from 'expo-status-bar';
+import { colors } from './src/theme';
 import Header from './src/components/Header';
 import PlanetImg from './src/components/PlanetImg';
 import MainContent from './src/components/MainContent';
 import Footer from './src/components/Footer';
-import { colors } from './src/theme';
 import Stars from './assets/background/background-stars.svg';
+import PlanetsMenu from './src/PlanetsMenu';
+
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -15,6 +18,7 @@ export default function App() {
     'Spartan-Regular': require('./assets/fonts/LeagueSpartan-Regular.ttf'),
   });
 
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(true);
   const { width } = useWindowDimensions();
   const screenSize = width > 1040 ? 'laptop' : width > 740 ? 'tablet' : 'mobile';
   const styles = styleSheet(screenSize);
@@ -22,15 +26,27 @@ export default function App() {
   return (
     <View style={styles.container}>
       <ImageBackground source={Stars} style={styles.bgImage}>
-      <StatusBar style="auto" />
-      <Header screenSize={screenSize}/>
-      <View>
-        <PlanetImg />
-        <MainContent />
-      </View>
-      <Footer />
+        <StatusBar style="auto" />
+        <Header screenSize={screenSize}
+          setIsMobileMenuOpen={setIsMobileMenuOpen}
+        />
+        {isMobileMenuOpen &&
+          <View>
+            <Text style={{ color: 'white' }}>Mobile menu open</Text>
+            <PlanetsMenu />
+          </View>
+        }
+        {!isMobileMenuOpen &&
+          <View>
+            <View>
+              <PlanetImg />
+              <MainContent />
+            </View>
+            <Footer />
+          </View>
+        }
       </ImageBackground >
-     
+
     </View>
   );
 }
@@ -44,7 +60,7 @@ const styleSheet = (screenSize) => StyleSheet.create({
   },
   bgImage: {
     flex: 1,
-resizeMode: 'cover'
+    resizeMode: 'cover'
   }
-  
+
 });

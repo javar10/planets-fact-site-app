@@ -3,14 +3,14 @@ export const colors = {
     dark: '#070724',
     darkGray: '#38384F',
     lightGray: '#838391',
-    mercury: '#419EBB',
-    venus: '#EDA249',
-    earth: '#6F2ED6',
-    mars: '#D14C32',
-    jupitor: '#D83A34',
-    saturn: '#CD5120',
-    uranus: '#1EC2A4',
-    neptune: '#2D68F0',
+    Mercury: '#419EBB',
+    Venus: '#EDA249',
+    Earth: '#6F2ED6',
+    Mars: '#D14C32',
+    Jupiter: '#D83A34',
+    Saturn: '#CD5120',
+    Uranus: '#1EC2A4',
+    Neptune: '#2D68F0',
 };
 
 export const textStyle = {
