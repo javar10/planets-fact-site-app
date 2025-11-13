@@ -31,6 +31,7 @@ export default function App() {
         <StatusBar style="auto" />
         <Header
           screenSize={screenSize}
+          isMobileMenuOpen={isMobileMenuOpen}
           setIsMobileMenuOpen={setIsMobileMenuOpen}
         />
         {isMobileMenuOpen &&
