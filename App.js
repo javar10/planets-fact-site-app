@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Image, ImageBackground, StyleSheet, View, useWindowDimensions, Text } from 'react-native';
+import { useEffect, useState } from 'react';
+import { Image, ImageBackground, StyleSheet, View, useWindowDimensions, Text, Dimensions } from 'react-native';
 import { useFonts } from 'expo-font';
 import { StatusBar } from 'expo-status-bar';
 import { colors } from './src/theme';
@@ -23,16 +23,18 @@ export default function App() {
   const screenSize = width > 1040 ? 'laptop' : width > 740 ? 'tablet' : 'mobile';
   const styles = styleSheet(screenSize);
 
+  Dimensions.addEventListener('change', () => setIsMobileMenuOpen(false));
+
   return (
     <View style={styles.container}>
       <ImageBackground source={Stars} style={styles.bgImage}>
         <StatusBar style="auto" />
-        <Header screenSize={screenSize}
+        <Header
+          screenSize={screenSize}
           setIsMobileMenuOpen={setIsMobileMenuOpen}
         />
         {isMobileMenuOpen &&
           <View>
-            <Text style={{ color: 'white' }}>Mobile menu open</Text>
             <PlanetsMenu />
           </View>
         }
