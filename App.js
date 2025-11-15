@@ -52,22 +52,22 @@ export default function App() {
           <View>
             {screenSize === 'mobile' &&
               <MobilePageSelectors
+                screenSize={screenSize}
                 page={page}
                 setPage={setPage}
                 selectedPlanet={selectedPlanet}
               />}
             <View>
-              <PlanetImg 
-              selectedPlanet={selectedPlanet}
-              page={page}
+              <PlanetImg
+                selectedPlanet={selectedPlanet}
+                page={page}
               />
-              <MainContent 
-              selectedPlanet={selectedPlanet}
-              // planetName={selectedPlanet.name} 
-              page={page}
+              <MainContent
+                selectedPlanet={selectedPlanet}
+                page={page}
               />
             </View>
-            <Footer selectedPlanet={selectedPlanet}/>
+            <Footer selectedPlanet={selectedPlanet} />
           </View>
         }
       </ImageBackground >

@@ -39,9 +39,23 @@ export const textStyle = {
         lineHeight: 25,
         letterSpacing: 1
     },
+    H5: {
+        fontFamily: 'Spartan-Bold',
+        fontSize: 9,
+        lineHeight: 25,
+        letterSpacing: 1.93,
+        textTransform: 'uppercase',
+    },
+    H5m: {
+        fontFamily: 'Spartan-Bold',
+        fontSize: 9,
+        letterSpacing: 1.93,
+        textTransform: 'uppercase',
+    },
     body: {
         fontFamily: 'Spartan-Regular',
         fontSize: 14,
         lineHeight: 25,
     },
+
 };
