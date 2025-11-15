@@ -21,13 +21,12 @@ export default Button
 
 const styleSheet = (screenSize, selectedPlanet) => StyleSheet.create({
   btnText: {
-    ...textStyle.H5m,
+    ...textStyle[screenSize].H3,
     color: colors.white,
     borderBottomWidth: 4,
     paddingBottom: 12,
   },
   selectedText: {
     borderBottomColor: colors[selectedPlanet.name],
-    
   }
 })

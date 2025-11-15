@@ -38,11 +38,7 @@ const styleSheet = (screenSize) => StyleSheet.create({
     borderBottomWidth: 1,
   },
   heroText: {
-    fontFamily: 'Antonio-Medium',
-    fontSize: 28,
-    lineHeight: 28,
-    letterSpacing: -1.05,
-    textTransform: 'uppercase',
+    ...textStyle[screenSize].hero,
     color: colors.white,
   },
 })

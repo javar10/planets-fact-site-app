@@ -15,6 +15,9 @@ export const colors = {
 
 export const textStyle = {
     laptop: {
+        hero: {
+
+        },
         H1: {
             fontFamily: 'Antonio-Medium',
             fontSize: 80,
@@ -31,7 +34,7 @@ export const textStyle = {
         H3: {
             fontFamily: 'Spartan-Bold',
             fontSize: 12,
-            lineHeight: 25,
+            lineHeight: 28,
             letterSpacing: 2.6,
         },
         H4: {
@@ -54,16 +57,29 @@ export const textStyle = {
         },
     },
     mobile: {
+        hero: {
+            fontFamily: 'Antonio-Medium',
+            fontSize: 28,
+            letterSpacing: -1.05,
+            textTransform: 'uppercase',
+        },
         H1: {
             fontFamily: 'Antonio-Medium',
             fontSize: 40,
             letterSpacing: 0,
             textTransform: 'uppercase',
         },
-        H5: {
+        H3: {
             fontFamily: 'Spartan-Bold',
             fontSize: 9,
             letterSpacing: 1.93,
+            textTransform: 'uppercase',
+        },
+        H4: {
+            fontFamily: 'Spartan-Bold',
+            fontSize: 15,
+            lineHeight: 25,
+            letterSpacing: 1.36,
             textTransform: 'uppercase',
         },
         body: {

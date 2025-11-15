@@ -1,9 +1,9 @@
 import { StyleSheet, Text, View, Image } from 'react-native'
 import planetData from '../data.json';
-import { colors } from '../theme';
+import { colors, textStyle } from '../theme';
 import Arrow from '../../assets/icons/icon-chevron.svg';
 
-const PlanetsMenu = ({ setSelectedPlanet, setIsMobileMenuOpen }) => {
+const PlanetsMenu = ({ screenSize, setSelectedPlanet, setIsMobileMenuOpen }) => {
 
     const selectPlanet = (planetName) => {
         const planet = planetData.find(p => p.name === planetName);
@@ -14,7 +14,7 @@ const PlanetsMenu = ({ setSelectedPlanet, setIsMobileMenuOpen }) => {
     return (
         <View style={{ paddingTop: 32 }}>
             {planetData.map((planet) => {
-                const styles = styleSheet(planet.name);
+                const styles = styleSheet(screenSize, planet.name);
                 return (
                     <View key={planet.name} style={styles.container} >
                         <View style={styles.planetNameContainer}>
@@ -37,7 +37,7 @@ const PlanetsMenu = ({ setSelectedPlanet, setIsMobileMenuOpen }) => {
 
 export default PlanetsMenu
 
-const styleSheet = (planetName) => StyleSheet.create({
+const styleSheet = (screenSize, planetName) => StyleSheet.create({
     container: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -59,11 +59,7 @@ const styleSheet = (planetName) => StyleSheet.create({
         marginRight: 20
     },
     text: {
-        fontFamily: 'Spartan-Bold',
-        fontSize: 15,
-        lineHeight: 25,
-        letterSpacing: 1.36,
-        textTransform: 'uppercase',
+        ...textStyle[screenSize].H4,
         color: colors.white,
     }
 })

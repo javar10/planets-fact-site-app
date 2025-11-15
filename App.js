@@ -43,6 +43,7 @@ export default function App() {
         {isMobileMenuOpen &&
           <View>
             <PlanetsMenu
+              screenSize={screenSize}
               setSelectedPlanet={setSelectedPlanet}
               setIsMobileMenuOpen={setIsMobileMenuOpen}
             />
