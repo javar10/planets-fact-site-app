@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const PlanetImg = () => {
+const PlanetImg = ({ selectedPlanet }) => {
   return (
     <View>
       <Text style={{ color: 'white' }}>PlanetImg</Text>

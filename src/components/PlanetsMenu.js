@@ -1,13 +1,15 @@
 import { StyleSheet, Text, View, Image } from 'react-native'
-import planetData from '../src/data.json';
-import { colors } from './theme';
-import Arrow from '../assets/icons/icon-chevron.svg';
+import planetData from '../data.json';
+import { colors } from '../theme';
+import Arrow from '../../assets/icons/icon-chevron.svg';
 
 const PlanetsMenu = ({ selectedPlanet, setSelectedPlanet }) => {
 
     const selectPlanet = (planetName) => {
-        setSelectedPlanet(planetName);
+        const planet = planetData.find(p => p.name === planetName);
+        setSelectedPlanet(planet);
         console.log(planetName);
+        console.log(planet);
     };
 
     return (

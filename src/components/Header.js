@@ -1,6 +1,7 @@
 import { Image, Pressable, StyleSheet, Text, View } from 'react-native'
 import { colors, textStyle } from '../theme'
 import Hamburger from '../../assets/icons/icon-hamburger.svg';
+import Button from './Button';
 
 const Header = ({ screenSize, isMobileMenuOpen, setIsMobileMenuOpen }) => {
   const styles = styleSheet(screenSize);
@@ -9,12 +10,15 @@ const Header = ({ screenSize, isMobileMenuOpen, setIsMobileMenuOpen }) => {
     <View style={styles.container}>
       <Text style={styles.heroText}>The Planets</Text>
       {screenSize === 'mobile' &&
-        <Pressable onPress={() => setIsMobileMenuOpen(prev => !prev)}>
-          <Image
-            source={Hamburger}
-            style={{opacity: isMobileMenuOpen ? .25 : 1}}
-          />
-        </Pressable>
+        <View>
+          <Pressable onPress={() => setIsMobileMenuOpen(prev => !prev)}>
+            <Image
+              source={Hamburger}
+              style={{ opacity: isMobileMenuOpen ? .25 : 1 }}
+            />
+          </Pressable>
+
+        </View>
 
       }
     </View>
@@ -40,5 +44,5 @@ const styleSheet = (screenSize) => StyleSheet.create({
     letterSpacing: -1.05,
     textTransform: 'uppercase',
     color: colors.white,
-  }
+  },
 })
