@@ -1,34 +1,62 @@
 import { Image, Linking, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { colors, textStyle } from '../theme';
 
-const MainContent = ({ selectedPlanet, page }) => {
+const MainContent = ({ screenSize, selectedPlanet, page }) => {
+  const styles = styleSheet(screenSize);
+
   return (
-    <View>
+    <View style={styles.mainContentContainer}>
       <Text style={styles.headerText}>{selectedPlanet.name}</Text>
       <Text style={styles.bodyText}>{selectedPlanet[page].content}</Text>
 
-      <Text style={styles.sourceText} >Source:
-        <Text style={styles.sourceLink}
-          onPress={() => Linking.openURL(selectedPlanet[page].source)}
-        > {`Wikipedia `}
-          <Image source={require('../../assets/icons/icon-source.svg')} />
+      <View style={styles.sourceTextContainer}>
+        <Text style={[styles.bodyText, styles.sourceText]}>
+          Source:
         </Text>
-      </Text>
-      
+        <View style={styles.sourceTextContainer}>
+          <Text style={[styles.bodyText, styles.sourceText, styles.sourceLink]}
+            onPress={() => Linking.openURL(selectedPlanet[page].source)}
+          >Wikipedia
+          </Text>
+          <Image source={require('../../assets/icons/icon-source.svg')} />
+        </View>
+      </View>
+
     </View>
   )
 }
 
 export default MainContent
 
-const styles = StyleSheet.create({
+const styleSheet = (screenSize) => StyleSheet.create({
+  mainContentContainer: {
+    // height: 235,
+    marginHorizontal: 24,
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
   headerText: {
-    color: 'white',
+    ...textStyle[screenSize].H1,
+    color: colors.white,
+    marginBottom: 16,
   },
   bodyText: {
-    color: 'white',
+    ...textStyle[screenSize].body,
+    color: colors.white,
+    marginBottom: 16,
+    textAlign: 'center',
+  },
+  sourceTextContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   sourceText: {
-    color: 'white',
-  }
+    marginBottom: 0,
+    marginRight: 3,
+  },
+  sourceLink: {
+    textDecorationLine: 'underline',
+  },
 })

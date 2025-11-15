@@ -64,6 +64,7 @@ export default function App() {
                 page={page}
               />
               <MainContent
+                screenSize={screenSize}
                 selectedPlanet={selectedPlanet}
                 page={page}
               />
