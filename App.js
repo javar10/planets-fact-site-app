@@ -21,14 +21,16 @@ export default function App() {
   });
 
   const [selectedPlanet, setSelectedPlanet] = useState(planetData.find(p => p.name === 'Earth'));
-  const [page, setPage] = useState(selectedPlanet.overview)
+  const [page, setPage] = useState('overview')
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   const { width } = useWindowDimensions();
   const screenSize = width > 1040 ? 'laptop' : width > 740 ? 'tablet' : 'mobile';
   const styles = styleSheet(screenSize);
 
   Dimensions.addEventListener('change', () => setIsMobileMenuOpen(false));
 
+  console.log(page);
   return (
     <View style={styles.container}>
       <ImageBackground source={Stars} style={styles.bgImage}>
@@ -41,7 +43,6 @@ export default function App() {
         {isMobileMenuOpen &&
           <View>
             <PlanetsMenu
-              selectedPlanet={selectedPlanet}
               setSelectedPlanet={setSelectedPlanet}
               setIsMobileMenuOpen={setIsMobileMenuOpen}
             />
@@ -56,9 +57,13 @@ export default function App() {
                 selectedPlanet={selectedPlanet}
               />}
             <View>
-              <PlanetImg selectedPlanet={selectedPlanet}/>
+              <PlanetImg 
+              selectedPlanet={selectedPlanet}
+              page={page}
+              />
               <MainContent 
-              planetName={selectedPlanet.name} 
+              selectedPlanet={selectedPlanet}
+              // planetName={selectedPlanet.name} 
               page={page}
               />
             </View>

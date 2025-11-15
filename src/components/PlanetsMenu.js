@@ -3,14 +3,12 @@ import planetData from '../data.json';
 import { colors } from '../theme';
 import Arrow from '../../assets/icons/icon-chevron.svg';
 
-const PlanetsMenu = ({ selectedPlanet, setSelectedPlanet, setIsMobileMenuOpen }) => {
+const PlanetsMenu = ({ setSelectedPlanet, setIsMobileMenuOpen }) => {
 
     const selectPlanet = (planetName) => {
         const planet = planetData.find(p => p.name === planetName);
         setSelectedPlanet(planet);
         setIsMobileMenuOpen(false);
-        console.log(planetName);
-        console.log(planet);
     };
 
     return (

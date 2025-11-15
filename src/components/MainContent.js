@@ -1,11 +1,11 @@
 import { Image, Linking, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const MainContent = ({ planetName, page }) => {
+const MainContent = ({ selectedPlanet, page }) => {
   return (
     <View>
-      <Text style={styles.headerText}>{planetName}</Text>
-      <Text style={styles.bodyText}>{page.content}</Text>
+      <Text style={styles.headerText}>{selectedPlanet.name}</Text>
+      <Text style={styles.bodyText}>{selectedPlanet[page].content}</Text>
 
       <Text style={styles.sourceText} >Source:
         <Text style={styles.sourceLink}

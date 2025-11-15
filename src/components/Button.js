@@ -5,7 +5,7 @@ import { colors } from '../theme';
 const Button = ({ selectedPlanet, pageDescriptor, setPage}) => {
 
   const setText = (planetName) => {
-    setPage(selectedPlanet[pageDescriptor]);
+    setPage(pageDescriptor);
     // const planet = planetData.find(p => p.name === planetName);
     console.log(selectedPlanet[pageDescriptor].content)
     console.log(planetName);
