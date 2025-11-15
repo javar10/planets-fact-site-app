@@ -3,19 +3,29 @@ import planetData from '../src/data.json';
 import { colors } from './theme';
 import Arrow from '../assets/icons/icon-chevron.svg';
 
-const PlanetsMenu = () => {
+const PlanetsMenu = ({ selectedPlanet, setSelectedPlanet }) => {
+
+    const selectPlanet = (planetName) => {
+        setSelectedPlanet(planetName);
+        console.log(planetName);
+    };
+
     return (
         <View style={{ paddingTop: 32 }}>
             {planetData.map((planet) => {
                 const styles = styleSheet(planet.name);
-                console.log(planet.name)
                 return (
                     <View key={planet.name} style={styles.container} >
                         <View style={styles.planetNameContainer}>
                             <View style={styles.circle} />
-                            <Text style={styles.text}>{planet.name}</Text>
+                            <Text
+                                style={styles.text}
+                                onPress={() => selectPlanet(planet.name)}
+                            >
+                                {planet.name}
+                            </Text>
                         </View>
-                        <Image source={Arrow}/>
+                        <Image source={Arrow} />
                     </View>
                 )
             })}
