@@ -9,7 +9,7 @@ const MainContent = ({ selectedPlanet, page }) => {
 
       <Text style={styles.sourceText} >Source:
         <Text style={styles.sourceLink}
-          onPress={() => Linking.openURL(page.source)}
+          onPress={() => Linking.openURL(selectedPlanet[page].source)}
         > {`Wikipedia `}
           <Image source={require('../../assets/icons/icon-source.svg')} />
         </Text>
