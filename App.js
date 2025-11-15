@@ -18,7 +18,8 @@ export default function App() {
     'Spartan-Regular': require('./assets/fonts/LeagueSpartan-Regular.ttf'),
   });
 
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(true);
+  const [selectedPlanet, setSelectedPlanet] = useState('Earth');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { width } = useWindowDimensions();
   const screenSize = width > 1040 ? 'laptop' : width > 740 ? 'tablet' : 'mobile';
   const styles = styleSheet(screenSize);
