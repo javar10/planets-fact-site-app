@@ -1,8 +1,7 @@
 import { Image, StyleSheet, Text, View } from 'react-native'
 
-import Earth from '../../assets/images/planet-earth.svg';
-
-const PlanetImg = ({ selectedPlanet, page }) => {
+const PlanetImg = ({ screenSize, selectedPlanet, page }) => {
+  const styles = styleSheet(screenSize);
 
   const imgages = {
     overview: {
@@ -35,26 +34,33 @@ const PlanetImg = ({ selectedPlanet, page }) => {
       Uranus: require('../../assets/images/geology-uranus.png'),
       Neptune: require('../../assets/images/geology-neptune.png'),
     }
-
   }
 
+  // const imageSizes = {
+  //   Mercury: {width: }
+  // }
+
   return (
-    <View>
-      {/* <Image source={} /> */}
+    <View style={styles.planetImgContainer}>
       <Image
         style={styles.planetImg}
         source={imgages[page][selectedPlanet.name]}
       />
-      <Text style={{ color: 'white' }}>PlanetImg</Text>
     </View>
   )
 }
 
 export default PlanetImg
 
-const styles = StyleSheet.create({
+const styleSheet = (screenSize) => StyleSheet.create({
+  planetImgContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginVertical: 24,
+    height: '68vw',
+  },
   planetImg: {
-    width: 111,
-    height: 111,
+    resizeMode: 'contain',
+    transform: [{ scale: 0.385 }], 
   }
 })

@@ -59,6 +59,7 @@ export default function App() {
               />}
             <View>
               <PlanetImg
+                screenSize={screenSize}
                 selectedPlanet={selectedPlanet}
                 page={page}
               />

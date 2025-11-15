@@ -1,6 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native'
 import { colors, textStyle } from '../theme';
-import { useState } from 'react';
 
 const Button = ({ screenSize, selectedPlanet, pageDescriptor, page, setPage}) => {
   const styles = styleSheet(screenSize, selectedPlanet);
