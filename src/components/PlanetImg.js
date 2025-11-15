@@ -3,7 +3,7 @@ import { Image, StyleSheet, Text, View } from 'react-native'
 const PlanetImg = ({ screenSize, selectedPlanet, page }) => {
   const styles = styleSheet(screenSize);
 
-  const imgages = {
+  const images = {
     overview: {
       Mercury: require('../../assets/images/planet-mercury.svg'),
       Venus: require('../../assets/images/planet-venus.svg'),
@@ -44,8 +44,18 @@ const PlanetImg = ({ screenSize, selectedPlanet, page }) => {
     <View style={styles.planetImgContainer}>
       <Image
         style={styles.planetImg}
-        source={imgages[page][selectedPlanet.name]}
+        source={
+          page === 'geology' 
+            ? images['overview'][selectedPlanet.name]
+            : images[page][selectedPlanet.name]
+        }
       />
+      {page === 'geology' &&
+        <Image
+          style={[styles.planetImg, styles.geologyImg]}
+          source={images['geology'][selectedPlanet.name]}
+        />
+      }
     </View>
   )
 }
@@ -61,6 +71,11 @@ const styleSheet = (screenSize) => StyleSheet.create({
   },
   planetImg: {
     resizeMode: 'contain',
-    transform: [{ scale: 0.385 }], 
+    transform: [{ scale: 0.385 }],
+  },
+  geologyImg: {
+    position: 'absolute',
+    bottom: '-57%',
+    transform: [{ scale: 0.22 }],
   }
 })
