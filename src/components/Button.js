@@ -12,7 +12,7 @@ const Button = ({ screenSize, selectedPlanet, pageDescriptor, page, setPage}) =>
           pageDescriptor === page && styles.selectedText
         ]}
         onPress={() => setPage(pageDescriptor)}
-      >{pageDescriptor}</Text>
+      >{pageDescriptor === 'geology' ? 'surface' : pageDescriptor}</Text>
     </View>
   )
 }

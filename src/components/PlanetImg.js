@@ -45,7 +45,7 @@ const PlanetImg = ({ screenSize, selectedPlanet, page }) => {
       <Image
         style={styles.planetImg}
         source={
-          page === 'geology' 
+          page === 'geology'
             ? images['overview'][selectedPlanet.name]
             : images[page][selectedPlanet.name]
         }
@@ -67,15 +67,17 @@ const styleSheet = (screenSize) => StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginVertical: 24,
-    height: '68vw',
+    height: 256,
+    position: 'relative',
   },
   planetImg: {
     resizeMode: 'contain',
     transform: [{ scale: 0.385 }],
   },
   geologyImg: {
-    position: 'absolute',
-    bottom: '-57%',
+    resizeMode: 'contain',
     transform: [{ scale: 0.22 }],
+    position: 'absolute', 
+    top: 0,
   }
 })
