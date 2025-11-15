@@ -67,7 +67,7 @@ export default function App() {
               page={page}
               />
             </View>
-            <Footer />
+            <Footer selectedPlanet={selectedPlanet}/>
           </View>
         }
       </ImageBackground >
