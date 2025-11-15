@@ -43,6 +43,7 @@ export default function App() {
             <PlanetsMenu
               selectedPlanet={selectedPlanet}
               setSelectedPlanet={setSelectedPlanet}
+              setIsMobileMenuOpen={setIsMobileMenuOpen}
             />
           </View>
         }
