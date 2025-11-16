@@ -59,7 +59,7 @@ const styleSheet = (screenSize, planetName) => StyleSheet.create({
         marginRight: 20
     },
     text: {
-        ...textStyle[screenSize].H4,
+        ...textStyle[screenSize].H3,
         color: colors.white,
     }
 })

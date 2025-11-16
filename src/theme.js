@@ -69,19 +69,26 @@ export const textStyle = {
             letterSpacing: 0,
             textTransform: 'uppercase',
         },
-        H3: {
-            fontFamily: 'Spartan-Bold',
-            fontSize: 9,
-            letterSpacing: 1.93,
+        H2: {
+            fontFamily: 'Antonio-Medium',
+            fontSize: 20,
+            letterSpacing: -0.75,
             textTransform: 'uppercase',
         },
-        H4: {
+        H3: {
             fontFamily: 'Spartan-Bold',
             fontSize: 15,
             lineHeight: 25,
             letterSpacing: 1.36,
             textTransform: 'uppercase',
         },
+        H4: {
+            fontFamily: 'Spartan-Bold',
+            fontSize: 9,
+            letterSpacing: 1.93,
+            textTransform: 'uppercase',
+        },
+
         body: {
             fontFamily: 'Spartan-Regular',
             fontSize: 11,

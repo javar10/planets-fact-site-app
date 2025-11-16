@@ -30,7 +30,8 @@ export default function App() {
 
   Dimensions.addEventListener('change', () => setIsMobileMenuOpen(false));
 
-  console.log(page);
+  console.log(screenSize);
+  
   return (
     <View style={styles.container}>
       <ImageBackground source={Stars} style={styles.bgImage}>
@@ -70,7 +71,10 @@ export default function App() {
                 page={page}
               />
             </View>
-            <Footer selectedPlanet={selectedPlanet} />
+            <Footer
+              screenSize={screenSize}
+              selectedPlanet={selectedPlanet}
+            />
           </View>
         }
       </ImageBackground >

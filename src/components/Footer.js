@@ -1,24 +1,28 @@
 import { StyleSheet, Text, View } from 'react-native'
 import FactCard from './FactCard'
-import planetData from '../data.json';
 
-const Footer = ({ selectedPlanet }) => {
+const Footer = ({ screenSize, selectedPlanet }) => {
+  const styles = styleSheet(screenSize);
+
   return (
-    <View>
-      <Text>Footer</Text>
+    <View style={styles.container}>
       <FactCard
+        screenSize={screenSize}
         heading={'rotation time'}
         data={selectedPlanet.rotation}
       />
-       <FactCard
+      <FactCard
+        screenSize={screenSize}
         heading={'revolution time'}
         data={selectedPlanet.revolution}
       />
-       <FactCard
+      <FactCard
+        screenSize={screenSize}
         heading={'radius'}
         data={selectedPlanet.radius}
       />
-       <FactCard
+      <FactCard
+        screenSize={screenSize}
         heading={'average temp'}
         data={selectedPlanet.temperature}
       />
@@ -28,4 +32,10 @@ const Footer = ({ selectedPlanet }) => {
 
 export default Footer
 
-const styles = StyleSheet.create({})
+const styleSheet = (screenSize) => StyleSheet.create({
+  container: {
+    flexDirection: 'column',
+    marginHorizontal: 24,
+    marginVertical: 16
+  }
+})

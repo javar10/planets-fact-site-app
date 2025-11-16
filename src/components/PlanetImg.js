@@ -1,11 +1,19 @@
-import { Image, StyleSheet, Text, View } from 'react-native'
+import { Image, StyleSheet, View } from 'react-native'
+import MercuryOverview from '../../assets/images/planet-mercury.svg'
+import VenusOverMercuryOverview from '../../assets/images/planet-venus.svg'
+import EarthOverMercuryOverview from '../../assets/images/planet-earth.svg'
+import MarsOverMercuryOverview from '../../assets/images/planet-mars.svg'
+import JupiterOverMercuryOverview from '../../assets/images/planet-jupiter.svg'
+import SaturnOverMercuryOverview from '../../assets/images/planet-saturn.svg'
+import UranusOverMercuryOverview from '../../assets/images/planet-uranus.svg'
+import NeptuneOverMercuryOverview from '../../assets/images/planet-neptune.svg'
 
 const PlanetImg = ({ screenSize, selectedPlanet, page }) => {
   const styles = styleSheet(screenSize);
 
   const images = {
     overview: {
-      Mercury: require('../../assets/images/planet-mercury.svg'),
+      Mercury: MercuryOverview,
       Venus: require('../../assets/images/planet-venus.svg'),
       Earth: require('../../assets/images/planet-earth.svg'),
       Mars: require('../../assets/images/planet-mars.svg'),
@@ -48,6 +56,7 @@ const PlanetImg = ({ screenSize, selectedPlanet, page }) => {
           page === 'geology'
             ? images['overview'][selectedPlanet.name]
             : images[page][selectedPlanet.name]
+            // : `${selectedPlanet.name}${page}`
         }
       />
       {page === 'geology' &&

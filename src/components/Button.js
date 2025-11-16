@@ -21,7 +21,7 @@ export default Button
 
 const styleSheet = (screenSize, selectedPlanet) => StyleSheet.create({
   btnText: {
-    ...textStyle[screenSize].H3,
+    ...textStyle[screenSize].H4,
     color: `${colors.white}80`,
     borderBottomWidth: 4,
     paddingBottom: 12,
