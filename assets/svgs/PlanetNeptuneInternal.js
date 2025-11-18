@@ -1,0 +1,105 @@
+import * as React from "react";
+import Svg, { Defs, Circle, Path, G, Mask, Use } from "react-native-svg";
+const SvgPlanetNeptuneInternal = (props) => (
+  <Svg
+    xmlns="http://www.w3.org/2000/svg"
+    xmlnsXlink="http://www.w3.org/1999/xlink"
+    width={450}
+    height={450}
+    {...props}
+  >
+    <Defs>
+      <Circle id="planet-neptune-internal_svg__a" cx={225} cy={225} r={225} />
+      <Circle id="planet-neptune-internal_svg__c" cx={225} cy={225} r={225} />
+      <Circle id="planet-neptune-internal_svg__e" cx={225} cy={225} r={225} />
+      <Circle id="planet-neptune-internal_svg__g" cx={225} cy={225} r={225} />
+      <Circle id="planet-neptune-internal_svg__i" cx={225} cy={225} r={225} />
+      <Path
+        id="planet-neptune-internal_svg__k"
+        d="M0 0c120.398 0 218 97.602 218 218S120.398 436 0 436z"
+      />
+    </Defs>
+    <G fill="none" fillRule="evenodd">
+      <Circle cx={225} cy={225} r={225} fill="#497EFA" fillRule="nonzero" />
+      <Mask id="planet-neptune-internal_svg__b" fill="#fff">
+        <Use xlinkHref="#planet-neptune-internal_svg__a" />
+      </Mask>
+      <Path
+        fill="#356CEE"
+        fillRule="nonzero"
+        d="M317.177 262c6.628 0 12 5.373 12 12s-5.372 12-12 12h-73c-6.627 0-12-5.373-12-12s5.373-12 12-12zm-287 0c6.628 0 12 5.373 12 12s-5.372 12-12 12h-73c-6.627 0-12-5.373-12-12s5.373-12 12-12zm539 0c6.628 0 12 5.373 12 12s-5.372 12-12 12h-166c-6.627 0-12-5.373-12-12s5.373-12 12-12zm-334-96c6.628 0 12 5.373 12 12s-5.372 12-12 12h-78v.01c-6.395.262-11.5 5.53-11.5 11.99s5.105 11.728 11.5 11.99v.01h160c6.628 0 12 5.373 12 12s-5.372 12-12 12h-257c-6.627 0-12-5.373-12-12s5.373-12 12-12h49c6.628 0 12-5.373 12-12s-5.372-12-12-12h-30c-6.627 0-12-5.373-12-12s5.373-12 12-12zm168 36c0-6.627-5.372-12-12-12h-84c-6.627 0-12-5.373-12-12s5.373-12 12-12h156c6.628 0 12 5.373 12 12s-5.372 12-12 12h-24v.01c-6.395.262-11.5 5.53-11.5 11.99s5.105 11.728 11.5 11.99v.01h200c6.628 0 12 5.373 12 12s-5.372 12-12 12h-257c-6.627 0-12-5.373-12-12s5.373-12 12-12h9c6.628 0 12-5.373 12-12m-388-36c6.628 0 12 5.373 12 12s-5.372 12-12 12h-156c-6.627 0-12-5.373-12-12s5.373-12 12-12zm662 0c6.628 0 12 5.373 12 12s-5.372 12-12 12h-156c-6.627 0-12-5.373-12-12s5.373-12 12-12z"
+        mask="url(#planet-neptune-internal_svg__b)"
+      />
+      <Mask id="planet-neptune-internal_svg__d" fill="#fff">
+        <Use xlinkHref="#planet-neptune-internal_svg__c" />
+      </Mask>
+      <Path
+        fill="#356CEE"
+        fillRule="nonzero"
+        d="M317.177 118c6.628 0 12 5.373 12 12s-5.372 12-12 12h-73c-6.627 0-12-5.373-12-12s5.373-12 12-12zm-287 0c6.628 0 12 5.373 12 12s-5.372 12-12 12h-73c-6.627 0-12-5.373-12-12s5.373-12 12-12zm539 0c6.628 0 12 5.373 12 12s-5.372 12-12 12h-166c-6.627 0-12-5.373-12-12s5.373-12 12-12zm-334-96c6.628 0 12 5.373 12 12s-5.372 12-12 12h-78v.01c-6.395.262-11.5 5.53-11.5 11.99s5.105 11.728 11.5 11.99V70h160c6.628 0 12 5.373 12 12s-5.372 12-12 12h-257c-6.627 0-12-5.373-12-12s5.373-12 12-12h49c6.628 0 12-5.373 12-12s-5.372-12-12-12h-30c-6.627 0-12-5.373-12-12s5.373-12 12-12zm168 36c0-6.627-5.372-12-12-12h-84c-6.627 0-12-5.373-12-12s5.373-12 12-12h156c6.628 0 12 5.373 12 12s-5.372 12-12 12h-24v.01c-6.395.262-11.5 5.53-11.5 11.99s5.105 11.728 11.5 11.99V70h200c6.628 0 12 5.373 12 12s-5.372 12-12 12h-257c-6.627 0-12-5.373-12-12s5.373-12 12-12h9c6.628 0 12-5.373 12-12m-388-36c6.628 0 12 5.373 12 12s-5.372 12-12 12h-156c-6.627 0-12-5.373-12-12s5.373-12 12-12zm662 0c6.628 0 12 5.373 12 12s-5.372 12-12 12h-156c-6.627 0-12-5.373-12-12s5.373-12 12-12z"
+        mask="url(#planet-neptune-internal_svg__d)"
+        opacity={0.4}
+      />
+      <Mask id="planet-neptune-internal_svg__f" fill="#fff">
+        <Use xlinkHref="#planet-neptune-internal_svg__e" />
+      </Mask>
+      <Path
+        fill="#356CEE"
+        fillRule="nonzero"
+        d="M317.177 430c6.628 0 12 5.373 12 12s-5.372 12-12 12h-73c-6.627 0-12-5.373-12-12s5.373-12 12-12zm-287 0c6.628 0 12 5.373 12 12s-5.372 12-12 12h-73c-6.627 0-12-5.373-12-12s5.373-12 12-12zm539 0c6.628 0 12 5.373 12 12s-5.372 12-12 12h-166c-6.627 0-12-5.373-12-12s5.373-12 12-12zm-334-96c6.628 0 12 5.373 12 12s-5.372 12-12 12h-78v.01c-6.395.262-11.5 5.53-11.5 11.99s5.105 11.728 11.5 11.99v.01h160c6.628 0 12 5.373 12 12s-5.372 12-12 12h-257c-6.627 0-12-5.373-12-12s5.373-12 12-12h49c6.628 0 12-5.373 12-12s-5.372-12-12-12h-30c-6.627 0-12-5.373-12-12s5.373-12 12-12zm168 36c0-6.627-5.372-12-12-12h-84c-6.627 0-12-5.373-12-12s5.373-12 12-12h156c6.628 0 12 5.373 12 12s-5.372 12-12 12h-24v.01c-6.395.262-11.5 5.53-11.5 11.99s5.105 11.728 11.5 11.99v.01h200c6.628 0 12 5.373 12 12s-5.372 12-12 12h-257c-6.627 0-12-5.373-12-12s5.373-12 12-12h9c6.628 0 12-5.373 12-12m-388-36c6.628 0 12 5.373 12 12s-5.372 12-12 12h-156c-6.627 0-12-5.373-12-12s5.373-12 12-12zm662 0c6.628 0 12 5.373 12 12s-5.372 12-12 12h-156c-6.627 0-12-5.373-12-12s5.373-12 12-12z"
+        mask="url(#planet-neptune-internal_svg__f)"
+        opacity={0.4}
+      />
+      <Mask id="planet-neptune-internal_svg__h" fill="#fff">
+        <Use xlinkHref="#planet-neptune-internal_svg__g" />
+      </Mask>
+      <Path
+        fill="#2255CA"
+        fillRule="nonzero"
+        d="M148.177 274c0-6.627-5.372-12-12-12h-19c-6.627 0-12-5.373-12-12s5.373-12 12-12h79c6.628 0 12 5.373 12 12s-5.372 12-12 12h-3v.01c-6.395.262-11.5 5.53-11.5 11.99s5.105 11.728 11.5 11.99v.01h3c6.628 0 12 5.373 12 12s-5.372 12-12 12h-61c-6.627 0-12-5.373-12-12s5.373-12 12-12h1c6.628 0 12-5.373 12-12"
+        mask="url(#planet-neptune-internal_svg__h)"
+      />
+      <Mask id="planet-neptune-internal_svg__j" fill="#fff">
+        <Use xlinkHref="#planet-neptune-internal_svg__i" />
+      </Mask>
+      <Path
+        fill="#000"
+        fillRule="nonzero"
+        d="M225 11h215.354v428H225z"
+        mask="url(#planet-neptune-internal_svg__j)"
+        opacity={0.078}
+      />
+      <G transform="translate(225 7)">
+        <Mask id="planet-neptune-internal_svg__l" fill="#fff">
+          <Use xlinkHref="#planet-neptune-internal_svg__k" />
+        </Mask>
+        <Use xlinkHref="#planet-neptune-internal_svg__k" fill="#94D5FF" />
+        <Circle
+          cy={218}
+          r={211}
+          fill="#2959C9"
+          mask="url(#planet-neptune-internal_svg__l)"
+        />
+        <Circle
+          cy={218}
+          r={147}
+          fill="#6593FF"
+          mask="url(#planet-neptune-internal_svg__l)"
+        />
+        <Circle
+          cy={218}
+          r={82}
+          fill="#4A7AE9"
+          mask="url(#planet-neptune-internal_svg__l)"
+        />
+        <Circle
+          cy={218}
+          r={32}
+          fill="#042570"
+          mask="url(#planet-neptune-internal_svg__l)"
+        />
+      </G>
+    </G>
+  </Svg>
+);
+export default SvgPlanetNeptuneInternal;

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Image, ImageBackground, StyleSheet, View, useWindowDimensions, Text, Dimensions } from 'react-native';
+import { Image, ImageBackground, StyleSheet, View, useWindowDimensions, Text, Dimensions, ScrollView } from 'react-native';
 import { useFonts } from 'expo-font';
 import { StatusBar } from 'expo-status-bar';
 import { colors } from './src/theme';
@@ -11,7 +11,6 @@ import Footer from './src/components/Footer';
 import Stars from './assets/background/background-stars.svg';
 import PlanetsMenu from './src/components/PlanetsMenu';
 import MobilePageSelectors from './src/components/MobilePageSelectors';
-
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -31,11 +30,12 @@ export default function App() {
   Dimensions.addEventListener('change', () => setIsMobileMenuOpen(false));
 
   console.log(screenSize);
-  
+
   return (
     <View style={styles.container}>
       <ImageBackground source={Stars} style={styles.bgImage}>
         <StatusBar style="auto" />
+        <ScrollView>
         <Header
           screenSize={screenSize}
           isMobileMenuOpen={isMobileMenuOpen}
@@ -77,6 +77,7 @@ export default function App() {
             />
           </View>
         }
+         </ScrollView>
       </ImageBackground >
 
     </View>

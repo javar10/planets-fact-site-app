@@ -11,10 +11,17 @@
   "dependencies": {
     "expo": "~54.0.23",
     "expo-status-bar": "~3.0.8",
+    "expo-svg-transformer": "^3.1.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-native": "0.81.5",
+    "react-native-svg": "15.12.1",
     "react-native-web": "^0.21.0"
   },
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "@svgr/cli": "^8.1.0",
+    "metro-config": "^0.76.8",
+    "react-native-svg-transformer": "^1.5.2"
+  }
 }

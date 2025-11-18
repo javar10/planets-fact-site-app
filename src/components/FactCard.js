@@ -1,5 +1,4 @@
 import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
 import { colors, textStyle } from '../theme';
 
 const FactCard = ({ screenSize, heading, data }) => {
