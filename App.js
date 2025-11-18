@@ -4,11 +4,11 @@ import { useFonts } from 'expo-font';
 import { StatusBar } from 'expo-status-bar';
 import { colors } from './src/theme';
 import planetData from './src/data.json';
+import BackgroundStars from './assets/svgs/BackgroundStars';
 import Header from './src/components/Header';
 import PlanetImg from './src/components/PlanetImg';
 import MainContent from './src/components/MainContent';
 import Footer from './src/components/Footer';
-import Stars from './assets/background/background-stars.svg';
 import PlanetsMenu from './src/components/PlanetsMenu';
 import MobilePageSelectors from './src/components/MobilePageSelectors';
 
@@ -23,7 +23,7 @@ export default function App() {
   const [page, setPage] = useState('overview')
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const { width } = useWindowDimensions();
+  const { width, height } = useWindowDimensions();
   const screenSize = width > 1040 ? 'laptop' : width > 740 ? 'tablet' : 'mobile';
   const styles = styleSheet(screenSize);
 
@@ -33,9 +33,9 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <ImageBackground source={Stars} style={styles.bgImage}>
-        <StatusBar style="auto" />
-        <ScrollView>
+      <StatusBar style="auto" />
+      <ScrollView>
+        <BackgroundStars style={styles.bgImage} />
         <Header
           screenSize={screenSize}
           isMobileMenuOpen={isMobileMenuOpen}
@@ -77,8 +77,7 @@ export default function App() {
             />
           </View>
         }
-         </ScrollView>
-      </ImageBackground >
+      </ScrollView>
 
     </View>
   );
@@ -88,12 +87,11 @@ const styleSheet = (screenSize) => StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.dark,
-    // alignItems: 'center',
-    // justifyContent: 'center',
+    zIndex: -1,
   },
   bgImage: {
-    flex: 1,
-    resizeMode: 'cover'
+    position: 'absolute',
+    zIndex: 0,
   }
 
 });

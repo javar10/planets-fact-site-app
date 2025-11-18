@@ -72,16 +72,13 @@ const PlanetImg = ({ screenSize, selectedPlanet, page }) => {
     },
   }
 
-
   console.log('planet:', selectedPlanet.name);
   console.log('overlay:', geologyOverlays[selectedPlanet.name]);
 
-  const imageKey = `${selectedPlanet.name}${page.charAt(0).toUpperCase() + page.slice(1)}`
   const PlanetImage = page === 'geology' ? planetImages[selectedPlanet.name]['overview'] : planetImages[selectedPlanet.name][page];
 
   return (
     <View style={styles.planetImgContainer}>
-      {/* <MarsOverview style={styles.planetImg} /> */}
       <View style={styles.imageWrapper}>
         <PlanetImage style={styles.planetImg} />
       </View>
@@ -92,30 +89,6 @@ const PlanetImg = ({ screenSize, selectedPlanet, page }) => {
         />
       }
     </View>);
-
-
-  //     {/* <SvgPlanetMercuryInternal width={290} height={290} /> */ }
-  // {/* <MercuryOverview  width={24} height ={24}/> */ }
-  // {/* <Hamburger style={{ width: 24, height: 24 }} /> */ }
-  // {/* <Image source={Hamburger} style={{ width: 50, height: 50 }} /> */ }
-  // {/* <Image source={require('../../assets/images/planet-mercury.svg')} style={{ width: 50, height: 50 }} /> */ }
-
-  // {/* <Image
-  //       style={styles.planetImg}
-  //       source={
-  //         page === 'geology'
-  //           ? images['overview'][selectedPlanet.name]
-  //           : images[page][selectedPlanet.name]
-  //         // : `${selectedPlanet.name}${page}`
-  //       }
-  //     />
-  //     {page === 'geology' &&
-  //       <Image
-  //         style={[styles.planetImg, styles.geologyImg]}
-  //         source={images['geology'][selectedPlanet.name]}
-  //       />
-  //     } */}
-
 }
 
 export default PlanetImg
