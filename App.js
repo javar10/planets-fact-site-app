@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Image, ImageBackground, StyleSheet, View, useWindowDimensions, Text, Dimensions, ScrollView } from 'react-native';
+import { Platform, StyleSheet, View, useWindowDimensions, Dimensions, ScrollView } from 'react-native';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { useFonts } from 'expo-font';
 import { StatusBar } from 'expo-status-bar';
 import { colors } from './src/theme';
@@ -32,54 +33,56 @@ export default function App() {
   console.log(screenSize);
 
   return (
-    <View style={styles.container}>
-      <StatusBar style="auto" />
-      <ScrollView>
-        <BackgroundStars style={styles.bgImage} />
-        <Header
-          screenSize={screenSize}
-          isMobileMenuOpen={isMobileMenuOpen}
-          setIsMobileMenuOpen={setIsMobileMenuOpen}
-        />
-        {isMobileMenuOpen &&
-          <View>
-            <PlanetsMenu
-              screenSize={screenSize}
-              setSelectedPlanet={setSelectedPlanet}
-              setIsMobileMenuOpen={setIsMobileMenuOpen}
-            />
-          </View>
-        }
-        {!isMobileMenuOpen &&
-          <View>
-            {screenSize === 'mobile' &&
-              <MobilePageSelectors
-                screenSize={screenSize}
-                page={page}
-                setPage={setPage}
-                selectedPlanet={selectedPlanet}
-              />}
+    <SafeAreaProvider>
+      <SafeAreaView style={styles.container}>
+        <StatusBar style='light' translucent={false} backgroundColor={colors.dark} />
+        <ScrollView>
+          <BackgroundStars style={styles.bgImage} />
+          <Header
+            screenSize={screenSize}
+            isMobileMenuOpen={isMobileMenuOpen}
+            setIsMobileMenuOpen={setIsMobileMenuOpen}
+          />
+          {isMobileMenuOpen &&
             <View>
-              <PlanetImg
+              <PlanetsMenu
                 screenSize={screenSize}
-                selectedPlanet={selectedPlanet}
-                page={page}
-              />
-              <MainContent
-                screenSize={screenSize}
-                selectedPlanet={selectedPlanet}
-                page={page}
+                setSelectedPlanet={setSelectedPlanet}
+                setIsMobileMenuOpen={setIsMobileMenuOpen}
               />
             </View>
-            <Footer
-              screenSize={screenSize}
-              selectedPlanet={selectedPlanet}
-            />
-          </View>
-        }
-      </ScrollView>
+          }
+          {!isMobileMenuOpen &&
+            <View>
+              {screenSize === 'mobile' &&
+                <MobilePageSelectors
+                  screenSize={screenSize}
+                  page={page}
+                  setPage={setPage}
+                  selectedPlanet={selectedPlanet}
+                />}
+              <View>
+                <PlanetImg
+                  screenSize={screenSize}
+                  selectedPlanet={selectedPlanet}
+                  page={page}
+                />
+                <MainContent
+                  screenSize={screenSize}
+                  selectedPlanet={selectedPlanet}
+                  page={page}
+                />
+              </View>
+              <Footer
+                screenSize={screenSize}
+                selectedPlanet={selectedPlanet}
+              />
+            </View>
+          }
+        </ScrollView>
 
-    </View>
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
 
@@ -87,11 +90,11 @@ const styleSheet = (screenSize) => StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.dark,
-    zIndex: -1,
+    // zIndex: 0,
   },
   bgImage: {
     position: 'absolute',
-    zIndex: 0,
+    // zIndex: 0,
   }
 
 });

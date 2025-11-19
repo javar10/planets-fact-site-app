@@ -29,7 +29,7 @@ export default Header
 const styleSheet = (screenSize, isMobileMenuOpen) => StyleSheet.create({
   container: {
     paddingHorizontal: 24,
-    marginTop: 24,
+    // marginTop: 24,
     paddingVertical: 16,
     justifyContent: 'space-between',
     alignItems: 'center',

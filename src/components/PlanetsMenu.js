@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, Image } from 'react-native'
 import planetData from '../data.json';
 import { colors, textStyle } from '../theme';
-import Arrow from '../../assets/icons/icon-chevron.svg';
+import IconChevron from '../../assets/svgs/IconChevron';
 
 const PlanetsMenu = ({ screenSize, setSelectedPlanet, setIsMobileMenuOpen }) => {
 
@@ -26,7 +26,7 @@ const PlanetsMenu = ({ screenSize, setSelectedPlanet, setIsMobileMenuOpen }) => 
                                 {planet.name}
                             </Text>
                         </View>
-                        <Image source={Arrow} />
+                        <IconChevron />
                     </View>
                 )
             })}

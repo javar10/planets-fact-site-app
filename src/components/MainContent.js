@@ -1,5 +1,6 @@
 import { Image, Linking, StyleSheet, Text, View } from 'react-native'
 import { colors, textStyle } from '../theme';
+import IconSource from '../../assets/svgs/IconSource';
 
 const MainContent = ({ screenSize, selectedPlanet, page }) => {
   const styles = styleSheet(screenSize);
@@ -18,7 +19,7 @@ const MainContent = ({ screenSize, selectedPlanet, page }) => {
             onPress={() => Linking.openURL(selectedPlanet[page].source)}
           >Wikipedia
           </Text>
-          <Image source={require('../../assets/icons/icon-source.svg')} />
+          <IconSource />
         </View>
       </View>
 
