@@ -56,6 +56,21 @@ export const textStyle = {
             lineHeight: 25,
         },
     },
+    tablet: {
+        hero: {
+            fontFamily: 'Antonio-Medium',
+            fontSize: 28,
+            letterSpacing: -1.05,
+            textTransform: 'uppercase',
+        },
+        H3: {
+            fontFamily: 'Spartan-Bold',
+            fontSize: 11,
+            lineHeight: 25,
+            letterSpacing: 1,
+            textTransform: 'uppercase',
+        },
+    },
     mobile: {
         hero: {
             fontFamily: 'Antonio-Medium',

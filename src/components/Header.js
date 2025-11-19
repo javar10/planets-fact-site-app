@@ -1,12 +1,13 @@
 import { Image, Pressable, StyleSheet, Text, View } from 'react-native'
 import { colors, textStyle } from '../theme'
 import Hamburger from '../../assets/icons/icon-hamburger.png';
+import PlanetsMenu from './PlanetsMenu';
 
-const Header = ({ screenSize, isMobileMenuOpen, setIsMobileMenuOpen }) => {
+const Header = ({ screenSize, setSelectedPlanet, isMobileMenuOpen, setIsMobileMenuOpen }) => {
   const styles = styleSheet(screenSize, isMobileMenuOpen);
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, styles[screenSize].container]}>
       <Text style={styles.heroText}>The Planets</Text>
       {screenSize === 'mobile' &&
         <View>
@@ -16,9 +17,14 @@ const Header = ({ screenSize, isMobileMenuOpen, setIsMobileMenuOpen }) => {
               style={styles.image}
             />
           </Pressable>
-
         </View>
-
+      }
+      {screenSize !== 'mobile' &&
+        <PlanetsMenu
+          screenSize={screenSize}
+          setSelectedPlanet={setSelectedPlanet}
+          setIsMobileMenuOpen={setIsMobileMenuOpen}
+        />
       }
     </View>
   )
@@ -31,9 +37,7 @@ const styleSheet = (screenSize, isMobileMenuOpen) => StyleSheet.create({
     paddingHorizontal: 24,
     // marginTop: 24,
     paddingVertical: 16,
-    justifyContent: 'space-between',
     alignItems: 'center',
-    flexDirection: 'row',
     borderBottomColor: `${colors.white}33`,
     borderBottomWidth: 1,
   },
@@ -41,9 +45,27 @@ const styleSheet = (screenSize, isMobileMenuOpen) => StyleSheet.create({
     ...textStyle[screenSize].hero,
     color: colors.white,
   },
-  image: { 
-    width: 24, 
+  image: {
+    width: 24,
     height: 17,
     opacity: isMobileMenuOpen ? .25 : 1
-   }
+  },
+  laptop: {
+    container: {
+      justifyContent: 'space-between',
+      flexDirection: 'column',
+    }
+  },
+  tablet: {
+    container: {
+      justifyContent: 'space-between',
+      flexDirection: 'column',
+    }
+  },
+  mobile: {
+    container: {
+      justifyContent: 'space-between',
+      flexDirection: 'row',
+    }
+  }
 })

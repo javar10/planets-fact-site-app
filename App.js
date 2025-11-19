@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { Platform, StyleSheet, View, useWindowDimensions, Dimensions, ScrollView } from 'react-native';
+import { useState } from 'react';
+import { StyleSheet, View, useWindowDimensions, Dimensions, ScrollView } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { useFonts } from 'expo-font';
 import { StatusBar } from 'expo-status-bar';
@@ -24,9 +24,8 @@ export default function App() {
   const [page, setPage] = useState('overview')
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const { width, height } = useWindowDimensions();
+  const { width } = useWindowDimensions();
   const screenSize = width > 1040 ? 'laptop' : width > 740 ? 'tablet' : 'mobile';
-  const styles = styleSheet(screenSize);
 
   Dimensions.addEventListener('change', () => setIsMobileMenuOpen(false));
 
@@ -40,6 +39,7 @@ export default function App() {
           <BackgroundStars style={styles.bgImage} />
           <Header
             screenSize={screenSize}
+            setSelectedPlanet={setSelectedPlanet}
             isMobileMenuOpen={isMobileMenuOpen}
             setIsMobileMenuOpen={setIsMobileMenuOpen}
           />
@@ -66,6 +66,7 @@ export default function App() {
                   screenSize={screenSize}
                   selectedPlanet={selectedPlanet}
                   page={page}
+                  key={selectedPlanet.name}
                 />
                 <MainContent
                   screenSize={screenSize}
@@ -86,15 +87,13 @@ export default function App() {
   );
 }
 
-const styleSheet = (screenSize) => StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.dark,
-    // zIndex: 0,
   },
   bgImage: {
     position: 'absolute',
-    // zIndex: 0,
   }
 
 });
