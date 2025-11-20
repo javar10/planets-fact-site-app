@@ -34,9 +34,6 @@ export default Header
 
 const styleSheet = (screenSize, isMobileMenuOpen) => StyleSheet.create({
   container: {
-    paddingHorizontal: 24,
-    // marginTop: 24,
-    paddingVertical: 16,
     alignItems: 'center',
     borderBottomColor: `${colors.white}33`,
     borderBottomWidth: 1,
@@ -53,19 +50,25 @@ const styleSheet = (screenSize, isMobileMenuOpen) => StyleSheet.create({
   laptop: {
     container: {
       justifyContent: 'space-between',
-      flexDirection: 'column',
+      flexDirection: 'row',
+      paddingHorizontal: 32,
+      paddingVertical: 22,
     }
   },
   tablet: {
     container: {
       justifyContent: 'space-between',
       flexDirection: 'column',
+      paddingTop: 32,
     }
   },
   mobile: {
     container: {
+      // marginTop: 24,
       justifyContent: 'space-between',
       flexDirection: 'row',
+      paddingHorizontal: 24,
+      paddingVertical: 16,
     }
   }
 })

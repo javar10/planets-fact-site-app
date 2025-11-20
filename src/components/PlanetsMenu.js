@@ -13,31 +13,33 @@ const PlanetsMenu = ({ screenSize, setSelectedPlanet, setIsMobileMenuOpen }) => 
 
     return (
         <View style={{
-            paddingTop: screenSize === 'tablet' ? 40 : 32,
+            paddingTop: screenSize === 'laptop' ? 0 : screenSize === 'tablet' ? 40 : 32,
             flexDirection: screenSize !== 'mobile' ? 'row' : 'column',
-            justifyContent: 'space-between',
-            width: '100%',
+            justifyContent: screenSize === 'laptop' ? 'flex-end' : 'space-between',
+            width: screenSize === 'laptop' ? 'auto' : '100%',
             paddingHorizontal: screenSize === 'tablet' ? 28 : 0,
+            gap: screenSize === 'laptop' ? 32 : 0,
+            alignItems: 'center'
         }}>
-        {
-            planetData.map((planet) => {
-                const styles = styleSheet(screenSize, planet.name);
-                return (
-                    <View key={planet.name} style={[styles.container, styles[screenSize].container]} >
-                        <View style={styles[screenSize].planetNameContainer}>
-                            <View style={styles[screenSize].circle} />
-                            <Text
-                                style={styles.planetNameText}
-                                onPress={() => selectPlanet(planet.name)}
-                            >
-                                {planet.name}
-                            </Text>
+            {
+                planetData.map((planet) => {
+                    const styles = styleSheet(screenSize, planet.name);
+                    return (
+                        <View key={planet.name} style={[styles.container, styles[screenSize].container]} >
+                            <View style={styles[screenSize].planetNameContainer}>
+                                <View style={styles[screenSize].circle} />
+                                <Text
+                                    style={styles.planetNameText}
+                                    onPress={() => selectPlanet(planet.name)}
+                                >
+                                    {planet.name}
+                                </Text>
+                            </View>
+                            {screenSize === 'mobile' && <IconChevron />}
                         </View>
-                        {screenSize === 'mobile' && <IconChevron />}
-                    </View>
-                )
-            })
-        }
+                    )
+                })
+            }
 
         </View >
     )
@@ -48,8 +50,6 @@ export default PlanetsMenu
 const styleSheet = (screenSize, planetName) => StyleSheet.create({
     container: {
         alignItems: 'center',
-        justifyContent: 'space-between',
-        paddingVertical: 20,
         borderBottomColor: `${colors.white}1A`,
     },
     planetNameText: {
@@ -58,27 +58,28 @@ const styleSheet = (screenSize, planetName) => StyleSheet.create({
     },
     laptop: {
         container: {
-            flexDirection: 'column',
+            // flexDirection: 'row',
+            justifyContent: 'flex-end',
+            width: 'auto',
+            // flex: 0,
         },
-        planetNameContainer: {
-            flexDirection: 'column',
-            alignItems: 'center',
-        },
+        // planetNameContainer: {
+        //     marginLeft: 32,
+        // }
     }, tablet: {
         container: {
             // flexDirection: 'column',
             // marginHorizontal: 52,
             flex: 1,
-        },
-        planetNameContainer: {
-            flexDirection: 'column',
-            alignItems: 'center',
-            flex: 1,
+            justifyContent: 'space-between',
+            paddingVertical: 20,
         },
     }, mobile: {
         container: {
             flexDirection: 'row',
             marginHorizontal: 24,
+            justifyContent: 'space-between',
+            paddingVertical: 20,
         },
         planetNameContainer: {
             flexDirection: 'row',

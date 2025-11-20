@@ -16,7 +16,10 @@ export const colors = {
 export const textStyle = {
     laptop: {
         hero: {
-
+            fontFamily: 'Antonio-Medium',
+            fontSize: 28,
+            letterSpacing: -1.05,
+            textTransform: 'uppercase'
         },
         H1: {
             fontFamily: 'Antonio-Medium',

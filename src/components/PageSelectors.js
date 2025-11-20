@@ -4,8 +4,6 @@ import PageSelector from './PageSelector';
 
 const PageSelectors = ({ screenSize, page, setPage, selectedPlanet }) => {
 
-//TODO: adjust names for each selector for laptop and tablet
-
   return (
     <View style={[styles.container, styles[screenSize].container]}>
       <PageSelector
