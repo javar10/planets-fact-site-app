@@ -6,7 +6,7 @@ const FactCard = ({ screenSize, heading, data }) => {
   const styles = styleSheet(screenSize);
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, styles[screenSize].container]}>
       <Text style={styles.headingText}>{heading}</Text>
       <Text style={styles.dataText}>{data}</Text>
     </View>
@@ -17,14 +17,10 @@ export default FactCard
 
 const styleSheet = (screenSize) => StyleSheet.create({
   container: {
-    flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center',
     paddingVertical: 16,
-    paddingHorizontal: 24,
     borderColor: `${colors.white}33`,
     borderWidth: 1,
-    marginBottom: 8,
   },
   headingText: {
     ...textStyle[screenSize].H4,
@@ -33,5 +29,28 @@ const styleSheet = (screenSize) => StyleSheet.create({
   dataText: {
     ...textStyle[screenSize].H2,
     color: colors.white,
+  },
+  laptop: {
+    container: {
+      flexDirection: 'column',
+      alignItems: 'flex-start',
+    }
+  },
+  tablet: {
+    container: {
+      flexDirection: 'column',
+      alignItems: 'flex-start',
+      paddingHorizontal: 14,
+      marginHorizontal: 6,
+      flex: 1,
+    }
+  },
+  mobile: {
+    container: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      paddingHorizontal: 24,
+      marginBottom: 8,
+    }
   }
 })

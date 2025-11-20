@@ -1,11 +1,11 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import FactCard from './FactCard'
 
 const Footer = ({ screenSize, selectedPlanet }) => {
   const styles = styleSheet(screenSize);
 
   return (
-    <View style={styles.container}>
+    <View style={styles[screenSize].container}>
       <FactCard
         screenSize={screenSize}
         heading={'rotation time'}
@@ -33,9 +33,25 @@ const Footer = ({ screenSize, selectedPlanet }) => {
 export default Footer
 
 const styleSheet = (screenSize) => StyleSheet.create({
-  container: {
-    flexDirection: 'column',
-    marginHorizontal: 24,
-    marginVertical: 16
+  laptop: {
+    container: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+    },
+  },
+  tablet: {
+    container: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      paddingHorizontal: 30,
+      marginVertical: 28
+    },
+  },
+  mobile: {
+    container: {
+      flexDirection: 'column',
+      marginHorizontal: 24,
+      marginVertical: 16
+    }
   }
 })
