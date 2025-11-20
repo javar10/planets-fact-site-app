@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
     pageInfoContainer: {
       flexDirection: 'row',
       justifyContent: 'space-between',
-      alignItems: 'flex-start',
+      alignItems: 'center',
     },
   },
   mobile: {
