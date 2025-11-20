@@ -70,7 +70,10 @@ export const textStyle = {
             textTransform: 'uppercase',
         },
         H2: {
-
+            fontFamily: 'Antonio-Medium',
+            fontSize: 24,
+            letterSpacing: -.9,
+            textTransform: 'uppercase'
         },
         H3: {
             fontFamily: 'Spartan-Bold',
