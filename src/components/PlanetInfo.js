@@ -2,13 +2,13 @@ import { Image, Linking, StyleSheet, Text, View } from 'react-native'
 import { colors, textStyle } from '../theme';
 import IconSource from '../../assets/svgs/IconSource';
 
-const MainContent = ({ screenSize, selectedPlanet, page }) => {
+const PlanetInfo = ({ screenSize, selectedPlanet, page }) => {
   const styles = styleSheet(screenSize);
 
   return (
-    <View style={styles.mainContentContainer}>
-      <Text style={styles.headerText}>{selectedPlanet.name}</Text>
-      <Text style={styles.bodyText}>{selectedPlanet[page].content}</Text>
+    <View style={[styles.mainContentContainer, styles[screenSize].mainContentContainer]}>
+      <Text style={[styles.headerText, styles[screenSize].headerText]}>{selectedPlanet.name}</Text>
+      <Text style={[styles.bodyText, styles[screenSize].bodyText]}>{selectedPlanet[page].content}</Text>
 
       <View style={styles.sourceTextContainer}>
         <Text style={[styles.bodyText, styles.sourceText]}>
@@ -27,31 +27,26 @@ const MainContent = ({ screenSize, selectedPlanet, page }) => {
   )
 }
 
-export default MainContent
+export default PlanetInfo
 
 const styleSheet = (screenSize) => StyleSheet.create({
   mainContentContainer: {
-    // height: 235,
-    marginHorizontal: 24,
     flexDirection: 'column',
     justifyContent: 'space-between',
-    alignItems: 'center',
   },
   headerText: {
     ...textStyle[screenSize].H1,
     color: colors.white,
-    marginBottom: 16,
   },
   bodyText: {
     ...textStyle[screenSize].body,
     color: colors.white,
-    marginBottom: 16,
-    textAlign: 'center',
   },
   sourceTextContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
+    opacity: 0.5,
   },
   sourceText: {
     marginBottom: 0,
@@ -59,5 +54,38 @@ const styleSheet = (screenSize) => StyleSheet.create({
   },
   sourceLink: {
     textDecorationLine: 'underline',
+  },
+  laptop: {
+    mainContentContainer: {
+      alignItems: 'flex-start',
+      width: '40%',
+    }
+  }, tablet: {
+    mainContentContainer: {
+      alignItems: 'flex-start',
+      width: '50%',
+      paddingLeft: 40,
+    },
+    headerText: {
+      marginBottom: 24,
+    },
+    bodyText: {
+      textAlign: 'flex-start',
+      marginBottom: 24,
+    },
+  }, mobile: {
+    mainContentContainer: {
+      alignItems: 'center',
+      width: '100%',
+      paddingHorizontal: 24,
+    },
+    headerText: {
+      marginBottom: 16,
+    },
+    bodyText: {
+      textAlign: 'center',
+      marginBottom: 16,
+    },
+
   },
 })

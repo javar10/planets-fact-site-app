@@ -8,10 +8,10 @@ import planetData from './src/data.json';
 import BackgroundStars from './assets/svgs/BackgroundStars';
 import Header from './src/components/Header';
 import PlanetImg from './src/components/PlanetImg';
-import MainContent from './src/components/MainContent';
+import PlanetInfo from './src/components/PlanetInfo';
 import Footer from './src/components/Footer';
 import PlanetsMenu from './src/components/PlanetsMenu';
-import MobilePageSelectors from './src/components/MobilePageSelectors';
+import PageSelectors from './src/components/PageSelectors';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -53,26 +53,34 @@ export default function App() {
             </View>
           }
           {!isMobileMenuOpen &&
-            <View>
+            <View >
               {screenSize === 'mobile' &&
-                <MobilePageSelectors
+                <PageSelectors
                   screenSize={screenSize}
                   page={page}
                   setPage={setPage}
                   selectedPlanet={selectedPlanet}
                 />}
-              <View>
+              <View style={styles[screenSize].mainContentContainer}>
                 <PlanetImg
                   screenSize={screenSize}
                   selectedPlanet={selectedPlanet}
                   page={page}
-                  key={selectedPlanet.name}
                 />
-                <MainContent
-                  screenSize={screenSize}
-                  selectedPlanet={selectedPlanet}
-                  page={page}
-                />
+                <View style={styles[screenSize].pageInfoContainer}>
+                  <PlanetInfo
+                    screenSize={screenSize}
+                    selectedPlanet={selectedPlanet}
+                    page={page}
+                  />
+                  {screenSize !== 'mobile' &&
+                    <PageSelectors
+                      screenSize={screenSize}
+                      page={page}
+                      setPage={setPage}
+                      selectedPlanet={selectedPlanet}
+                    />}
+                </View>
               </View>
               <Footer
                 screenSize={screenSize}
@@ -94,6 +102,37 @@ const styles = StyleSheet.create({
   },
   bgImage: {
     position: 'absolute',
-  }
+  },
+  laptop: {
+    mainContentContainer: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+    },
+    pageInfoContainer: {
+      flexDirection: 'column',
+      justifyContent: 'space-between',
+      alignItems: 'flex-start',
+    },
+  },
+  tablet: {
+    mainContentContainer: {
+      flexDirection: 'column',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+    },
+    pageInfoContainer: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'flex-start',
+    },
+  },
+  mobile: {
+    mainContentContainer: {
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+  },
 
 });

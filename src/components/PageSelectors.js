@@ -2,7 +2,7 @@ import { StyleSheet, View } from 'react-native'
 import { colors } from '../theme'
 import Button from './Button';
 
-const MobilePageSelectors = ({ screenSize, page, setPage, selectedPlanet }) => {
+const PageSelectors = ({ screenSize, page, setPage, selectedPlanet }) => {
   // console.log(page);
 
   return (
@@ -30,7 +30,7 @@ const MobilePageSelectors = ({ screenSize, page, setPage, selectedPlanet }) => {
   )
 }
 
-export default MobilePageSelectors
+export default PageSelectors
 
 const styles = StyleSheet.create({
   container: {
