@@ -3,7 +3,6 @@ import { colors, textStyle } from '../theme';
 
 const PageSelector = ({ screenSize, selectorNumber, pageDescriptor, page, setPage, selectedPlanet }) => {
   const styles = styleSheet(screenSize, selectedPlanet);
-  // console.log(pageDescriptor, page);
 
   return (
     <View style={[
@@ -26,7 +25,15 @@ const PageSelector = ({ screenSize, selectorNumber, pageDescriptor, page, setPag
           pageDescriptor === page && styles[screenSize].selectedText
         ]}
         onPress={() => setPage(pageDescriptor)}
-      >{pageDescriptor === 'geology' ? 'surface' : pageDescriptor}
+      >  {screenSize !== 'mobile'
+        ? pageDescriptor === 'structure'
+          ? 'internal structure'
+          : pageDescriptor === 'geology'
+            ? 'surface geology'
+            : pageDescriptor
+        : pageDescriptor === 'geology'
+          ? 'surface'
+          : pageDescriptor}
       </Text>
     </View>
   )
