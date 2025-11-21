@@ -108,12 +108,13 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'center',
-      marginHorizonal: 164,
+      // flex: 1,
     },
     pageInfoContainer: {
       flexDirection: 'column',
       justifyContent: 'space-between',
       alignItems: 'flex-start',
+      flex: 1,
     },
   },
   tablet: {

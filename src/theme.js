@@ -44,7 +44,8 @@ export const textStyle = {
             fontFamily: 'Spartan-Bold',
             fontSize: 11,
             lineHeight: 25,
-            letterSpacing: 1
+            letterSpacing: 1,
+            textTransform: 'uppercase'
         },
         H5: {
             fontFamily: 'Spartan-Bold',

@@ -36,22 +36,23 @@ export default PageSelectors
 
 const styles = StyleSheet.create({
   container: {
-    // borderWidth: 5,
     justifyContent: 'space-between',
-    flexDirection: 'column',
-    alignItems: 'flex-start',
   },
   laptop: {
-    // container: {
-    //   flexDirection: 'column',
-    // },
+    container: {
+      flexDirection: 'column',
+      alignItems: 'flex-start',
+      width: '100%',
+      paddingRight: 164,
+      marginTop: 24,
+    },
   },
   tablet: {
     container: {
-      //   flexDirection: 'column',
+      flexDirection: 'column',
       paddingHorizontal: 40,
       width: '50%',
-      //   alignItems: 'flex-start',
+      alignItems: 'flex-start',
     },
   },
   mobile: {

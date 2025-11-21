@@ -9,11 +9,14 @@ const PageSelector = ({ screenSize, selectorNumber, pageDescriptor, page, setPag
       styles[screenSize].container,
       pageDescriptor === page && styles[screenSize].selectedContainer]}>
       {screenSize !== 'mobile' &&
-        <Text style={[
-          styles.btnText,
-          styles[screenSize].btnText,
-          styles.pageNumber
-        ]}>
+        <Text
+          style={[
+            styles.btnText,
+            styles[screenSize].btnText,
+            styles.pageNumber
+          ]}
+          onPress={() => setPage(pageDescriptor)}
+        >
           {selectorNumber}
         </Text>
       }
@@ -49,8 +52,22 @@ const styleSheet = (screenSize, selectedPlanet) => StyleSheet.create({
     opacity: 0.5,
   },
   laptop: {
+    container: {
+      width: '100%',
+      borderColor: `${colors.white}33`,
+      borderWidth: 1,
+      flexDirection: 'row',
+      alignItems: 'center',
+      marginVertical: 8,
+    },
+    selectedContainer: {
+      backgroundColor: colors[selectedPlanet.name],
+      borderWidth: 0,
+    },
     btnText: {
       color: colors.white,
+      paddingVertical: 12,
+      paddingLeft: 20,
     },
     selectedText: {
       backgroundColor: colors[selectedPlanet.name],

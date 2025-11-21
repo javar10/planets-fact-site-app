@@ -58,8 +58,15 @@ const styleSheet = (screenSize) => StyleSheet.create({
   laptop: {
     mainContentContainer: {
       alignItems: 'flex-start',
-      width: '40%',
-    }
+      paddingRight: 164,
+    },
+    headerText: {
+      marginBottom: 24,
+    },
+    bodyText: {
+      textAlign: 'flex-start',
+      marginBottom: 24,
+    },
   }, tablet: {
     mainContentContainer: {
       alignItems: 'flex-start',
