@@ -34,6 +34,9 @@ const styleSheet = (screenSize) => StyleSheet.create({
     container: {
       flexDirection: 'column',
       alignItems: 'flex-start',
+      paddingHorizontal: 14,
+      marginHorizontal: 16,
+      flex: 1,
     }
   },
   tablet: {

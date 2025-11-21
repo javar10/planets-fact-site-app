@@ -13,7 +13,7 @@ const PlanetsMenu = ({ screenSize, setSelectedPlanet, setIsMobileMenuOpen }) => 
 
     return (
         <View style={{
-            paddingTop: screenSize === 'laptop' ? 0 : screenSize === 'tablet' ? 40 : 32,
+            paddingTop: screenSize === 'laptop' ? 0 : screenSize === 'tablet' ? 24 : 32,
             flexDirection: screenSize !== 'mobile' ? 'row' : 'column',
             justifyContent: screenSize === 'laptop' ? 'flex-end' : 'space-between',
             width: screenSize === 'laptop' ? 'auto' : '100%',
@@ -58,18 +58,11 @@ const styleSheet = (screenSize, planetName) => StyleSheet.create({
     },
     laptop: {
         container: {
-            // flexDirection: 'row',
             justifyContent: 'flex-end',
             width: 'auto',
-            // flex: 0,
         },
-        // planetNameContainer: {
-        //     marginLeft: 32,
-        // }
     }, tablet: {
         container: {
-            // flexDirection: 'column',
-            // marginHorizontal: 52,
             flex: 1,
             justifyContent: 'space-between',
             paddingVertical: 20,

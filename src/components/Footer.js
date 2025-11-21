@@ -37,6 +37,8 @@ const styleSheet = (screenSize) => StyleSheet.create({
     container: {
       flexDirection: 'row',
       justifyContent: 'space-between',
+      paddingHorizontal: 164,
+      marginVertical: 28
     },
   },
   tablet: {
