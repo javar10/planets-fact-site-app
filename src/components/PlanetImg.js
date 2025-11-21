@@ -72,10 +72,9 @@ const PlanetImg = ({ screenSize, selectedPlanet, page }) => {
     },
   }
 
-  console.log('planet:', selectedPlanet.name);
-  console.log('overlay:', geologyOverlays[selectedPlanet.name]);
-
-  const PlanetImage = page === 'geology' ? planetImages[selectedPlanet.name]['overview'] : planetImages[selectedPlanet.name][page];
+  const PlanetImage = page === 'geology'
+    ? planetImages[selectedPlanet.name]['overview']
+    : planetImages[selectedPlanet.name][page];
 
   return (
     <View style={[styles.planetImgContainer, styles[screenSize].planetImgContainer]}>
@@ -109,15 +108,20 @@ const styleSheet = (screenSize) => StyleSheet.create({
   geologyImg: {
     resizeMode: 'contain',
     position: 'absolute',
-    
+
   },
   laptop: {
     planetImgContainer: {
       height: 666,
+      width: '67%',
+    },
+      geologyImg: {
+      transform: [{ scale: 0.5 }],
+      top: 315,
     }
   },
   tablet: {
-     planetImgContainer: {
+    planetImgContainer: {
       height: 422,
     },
     imageWrapper: {
