@@ -98,6 +98,7 @@ const styleSheet = (screenSize) => StyleSheet.create({
     alignItems: 'center',
     marginVertical: 24,
     position: 'relative',
+    // overflow: 'hidden',
   },
 
   planetImg: {

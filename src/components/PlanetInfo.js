@@ -1,4 +1,4 @@
-import { Image, Linking, StyleSheet, Text, View } from 'react-native'
+import { Linking, StyleSheet, Text, View } from 'react-native'
 import { colors, textStyle } from '../theme';
 import IconSource from '../../assets/svgs/IconSource';
 

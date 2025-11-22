@@ -9,6 +9,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@expo/metro-runtime": "~6.1.2",
     "expo": "~54.0.23",
     "expo-status-bar": "~3.0.8",
     "expo-svg-transformer": "^3.1.0",
